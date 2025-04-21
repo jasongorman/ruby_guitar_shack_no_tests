@@ -10,9 +10,12 @@ class AlertMock < Alert
   end
 end
 
+sales_history_base_url = "https://gjtvhjg8e9.execute-api.us-east-2.amazonaws.com/default/sales"
+warehouse_base_url = "https://6hr1390c1j.execute-api.us-east-2.amazonaws.com/default/product"
+
 stock_monitor = StockMonitor.new(AlertMock.new,
-                                 Warehouse.new,
-                                 RestockLevel.new(SalesHistory.new))
+                                 Warehouse.new(warehouse_base_url),
+                                 RestockLevel.new(SalesHistory.new(sales_history_base_url)))
 
 # Test cases
 # Alert should be triggered:

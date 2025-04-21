@@ -4,8 +4,8 @@ require 'json'
 require 'date'
 
 class SalesHistory
-  def initialize
-    @base_url = "https://gjtvhjg8e9.execute-api.us-east-2.amazonaws.com/default/sales"
+  def initialize(base_url)
+    @base_url = base_url
   end
 
   def total_for_period(product_id, start_date, end_date)

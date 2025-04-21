@@ -5,8 +5,8 @@ require 'json'
 require_relative 'product.rb'
 
 class Warehouse
-  def initialize
-    @base_url = "https://6hr1390c1j.execute-api.us-east-2.amazonaws.com/default/product"
+  def initialize(base_url)
+    @base_url = base_url
   end
 
   def fetch_product(product_id)
